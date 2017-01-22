@@ -9,7 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/mixutils" />
+            <option value="$PROJECT_DIR$/mix-utils" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

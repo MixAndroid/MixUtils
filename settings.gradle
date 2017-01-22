@@ -1,1 +1,1 @@
-include ':app', ':mixutils'
+include ':app', ':mix-utils'
