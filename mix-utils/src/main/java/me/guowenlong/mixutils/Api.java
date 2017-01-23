@@ -6,8 +6,8 @@ import java.io.File;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import me.mixsparks.mix.http.HttpCacheInterceptor;
-import me.mixsparks.mix.http.TokenInterceptor;
+import me.guowenlong.mixutils.http.HttpCacheInterceptor;
+import me.guowenlong.mixutils.http.TokenInterceptor;
 import okhttp3.Cache;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -40,7 +40,7 @@ public class Api {
 
         public Builder() {
             this.cachelength = 1024 * 1024 * 50;
-//            this.cachefile = new File(MixSDK.mContext.getCacheDir(), "okhttp_cache");
+//            this.cachefile = new File(MixUtils.mContext.getCacheDir(), "okhttp_cache");
             this.isCache = false;
             this.readTimeout = 180_000;
             this.connectTimeout = 180_000;

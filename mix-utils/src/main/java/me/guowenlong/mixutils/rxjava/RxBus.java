@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
-import me.mixsparks.mix.util.LogUtils;
+import me.guowenlong.mixutils.util.LogUtils;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;

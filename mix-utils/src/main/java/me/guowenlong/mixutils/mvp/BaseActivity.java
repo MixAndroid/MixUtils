@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Window;
 
 import butterknife.ButterKnife;
-import me.mixsparks.mix.util.MvpUtils;
+import me.guowenlong.mixutils.util.MvpUtils;
 
 /**
  * des   : BaseActivity

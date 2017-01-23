@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
-import me.mixsparks.mix.MixSDK;
+import me.guowenlong.mixutils.MixUtils;
 
 /**
  * des   : Fragment基类
@@ -33,7 +33,7 @@ public abstract class BaseFragment  extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         mContext = getActivity();
-        sp = MixSDK.mSp;
+        sp = MixUtils.mSp;
         initView();
         initData(savedInstanceState);
         super.onActivityCreated(savedInstanceState);

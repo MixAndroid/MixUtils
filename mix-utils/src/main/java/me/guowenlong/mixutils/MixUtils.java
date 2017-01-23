@@ -7,8 +7,10 @@ import android.preference.PreferenceManager;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.gson.Gson;
 
-import me.mixsparks.mix.entity.User;
-import me.mixsparks.mix.util.LogUtils;
+import me.guowenlong.mixutils.entity.User;
+import me.guowenlong.mixutils.util.LogUtils;
+import wenlong.me.mixutils.BuildConfig;
+
 
 /**
  * des   : 描述
@@ -16,7 +18,7 @@ import me.mixsparks.mix.util.LogUtils;
  * email : guowenlong20000@gmail.com
  * time  : 2016年08月23日 下午 2:20.
  */
-public class MixSDK {
+public class MixUtils {
     public static Context mContext;
     public static SharedPreferences mSp;
 
@@ -32,6 +34,6 @@ public class MixSDK {
     }
 
     public static void setUser(User user) {
-        MixSDK.mSp.edit().putString("user", new Gson().toJson(user)).commit();
+        MixUtils.mSp.edit().putString("user", new Gson().toJson(user)).commit();
     }
 }

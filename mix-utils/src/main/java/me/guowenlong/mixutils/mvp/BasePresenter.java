@@ -2,7 +2,8 @@ package me.guowenlong.mixutils.mvp;
 
 import android.content.Context;
 
-import me.mixsparks.mix.rxjava.RxManager;
+import me.guowenlong.mixutils.rxjava.RxManager;
+
 
 /**
  * des   : BasePresenter

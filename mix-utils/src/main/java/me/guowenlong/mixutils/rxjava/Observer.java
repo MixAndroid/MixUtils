@@ -1,6 +1,7 @@
 package me.guowenlong.mixutils.rxjava;
 
-import me.mixsparks.mix.util.LogUtils;
+
+import me.guowenlong.mixutils.util.LogUtils;
 
 /**
  * des   : 异常提前统一处理

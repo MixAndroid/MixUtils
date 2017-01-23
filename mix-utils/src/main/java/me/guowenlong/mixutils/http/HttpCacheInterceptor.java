@@ -2,9 +2,9 @@ package me.guowenlong.mixutils.http;
 
 import java.io.IOException;
 
-import me.mixsparks.mix.MixSDK;
-import me.mixsparks.mix.util.LogUtils;
-import me.mixsparks.mix.util.NetWorkUtil;
+import me.guowenlong.mixutils.MixUtils;
+import me.guowenlong.mixutils.util.LogUtils;
+import me.guowenlong.mixutils.util.NetWorkUtil;
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;
 import okhttp3.Request;
@@ -21,7 +21,7 @@ public class HttpCacheInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
-        if (!NetWorkUtil.isNetConnected(MixSDK.mContext)) {
+        if (!NetWorkUtil.isNetConnected(MixUtils.mContext)) {
             request = request.newBuilder()
                     .cacheControl(CacheControl.FORCE_CACHE)
                     .build();
@@ -29,7 +29,7 @@ public class HttpCacheInterceptor implements Interceptor {
         }
 
         Response originalResponse = chain.proceed(request);
-        if (NetWorkUtil.isNetConnected(MixSDK.mContext)) {//有网的时候读接口上的@Headers里的配置
+        if (NetWorkUtil.isNetConnected(MixUtils.mContext)) {//有网的时候读接口上的@Headers里的配置
             String cacheControl = request.cacheControl().toString();
             return originalResponse.newBuilder()
                     .header("Cache-Control", cacheControl)

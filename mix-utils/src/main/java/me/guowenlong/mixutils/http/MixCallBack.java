@@ -3,7 +3,7 @@ package me.guowenlong.mixutils.http;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 
-import me.mixsparks.mix.entity.BaseCallModel;
+import me.guowenlong.mixutils.entity.BaseCallModel;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

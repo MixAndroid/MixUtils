@@ -4,7 +4,7 @@ import android.text.TextUtils;
 
 import java.io.IOException;
 
-import me.mixsparks.mix.MixSDK;
+import me.guowenlong.mixutils.MixUtils;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -20,18 +20,18 @@ public class TokenInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request originalRequest = chain.request();
-        String authToken = MixSDK.getUser().getAuthToken();
+        String authToken = MixUtils.getUser().getAuthToken();
         if (authToken == null || isHasToken(originalRequest)) {
             return chain.proceed(originalRequest);
         }
         Request authorised = originalRequest.newBuilder()
-                .header(MixSDK.getUser().getTokenKey(), authToken)
+                .header(MixUtils.getUser().getTokenKey(), authToken)
                 .build();
         return chain.proceed(authorised);
     }
 
     private boolean isHasToken(Request request) {
-        String tokenValue = request.headers().get(MixSDK.getUser().getTokenKey());
+        String tokenValue = request.headers().get(MixUtils.getUser().getTokenKey());
         if (TextUtils.isEmpty(tokenValue)) {
             return false;
         } else {
