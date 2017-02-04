@@ -1,4 +1,4 @@
-package me.guowenlong.mixutils;
+package me.guowenlong.mixutils.util;
 
 import android.net.Uri;
 import android.support.annotation.NonNull;

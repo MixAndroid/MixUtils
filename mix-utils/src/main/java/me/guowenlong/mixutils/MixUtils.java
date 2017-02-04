@@ -4,11 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.elvishew.xlog.LogLevel;
+import com.elvishew.xlog.XLog;
 import com.facebook.drawee.backends.pipeline.Fresco;
-import com.google.gson.Gson;
 
-import me.guowenlong.mixutils.entity.User;
 import me.guowenlong.mixutils.util.LogUtils;
+import me.guowenlong.mixutils.util.SpUtil;
 import wenlong.me.mixutils.BuildConfig;
 
 
@@ -26,14 +27,8 @@ public class MixUtils {
         mContext = context;
         Fresco.initialize(context);
         mSp = PreferenceManager.getDefaultSharedPreferences(context);
-        if (BuildConfig.DEBUG) LogUtils.allowLog = false;
-    }
-
-    public static User getUser() {
-        return new Gson().fromJson(mSp.getString("user", ""), User.class);
-    }
-
-    public static void setUser(User user) {
-        MixUtils.mSp.edit().putString("user", new Gson().toJson(user)).commit();
+        LogUtils.allowLog = !BuildConfig.DEBUG;
+        XLog.init(BuildConfig.DEBUG ? LogLevel.ALL : LogLevel.NONE);
+        SpUtil.init(mContext);
     }
 }

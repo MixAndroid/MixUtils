@@ -3,10 +3,13 @@ package me.guowenlong.mixutils.mvp;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.Window;
 
 import butterknife.ButterKnife;
 import me.guowenlong.mixutils.util.MvpUtils;
+import me.guowenlong.mixutils.util.SpUtil;
+import wenlong.me.mixutils.R;
 
 /**
  * des   : BaseActivity
@@ -31,6 +34,12 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
         this.initView(savedInstanceState);
         this.initData();
         if (this instanceof BaseView) mPresenter.setVM(this, mModel);
+    }
+
+    public void reload() {
+        AppCompatDelegate.setDefaultNightMode(SpUtil.isNight() ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
+        getWindow().setWindowAnimations(R.style.WindowAnimationFadeInOut);
+        recreate();
     }
 
     @Override
