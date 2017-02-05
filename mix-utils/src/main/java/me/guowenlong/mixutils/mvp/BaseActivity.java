@@ -1,10 +1,12 @@
 package me.guowenlong.mixutils.mvp;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.Window;
+
+import com.liuguangqiang.swipeback.SwipeBackActivity;
+import com.liuguangqiang.swipeback.SwipeBackLayout;
 
 import butterknife.ButterKnife;
 import me.guowenlong.mixutils.util.MvpUtils;
@@ -17,7 +19,7 @@ import wenlong.me.mixutils.R;
  * email : guowenlong20000@gmail.com
  * time  : 2016年08月29日 下午 4:44.
  */
-public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel> extends Activity {
+public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel> extends SwipeBackActivity {
     public T mPresenter;
     public E mModel;
     public Context mContext;
@@ -29,6 +31,7 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
         mContext = this;
         setContentView(getContentView(savedInstanceState));
         ButterKnife.bind(this);
+        setDragEdge(SwipeBackLayout.DragEdge.LEFT);
         mPresenter = MvpUtils.getT(this, 0);
         mModel = MvpUtils.getT(this, 1);
         this.initView(savedInstanceState);
