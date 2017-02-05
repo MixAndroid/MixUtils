@@ -43,8 +43,8 @@ dependencies {
 
     compile 'com.elvishew:xlog:1.3.0'
 
-    compile 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
     compile 'com.github.liuguangqiang.swipeback:library:1.0.2@aar'
 }
@@ -59,7 +59,7 @@ ext {
     libraryDescription = 'A Lib of mine'
     siteUrl = 'https://github.com/Wenlong-Guo/MixUtils' // 修改为你的项目的主页
     gitUrl = 'git@github.com:Wenlong-Guo/MixUtils.git' // 修改为你的Git仓库的url
-    libraryVersion = '0.0.5'
+    libraryVersion = '0.0.6'
 
     developerId = 'wenlong'
     developerName = 'Guo Wenlong'
