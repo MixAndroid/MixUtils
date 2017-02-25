@@ -2,6 +2,7 @@ package me.wenlong.mixutils.mvp;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.Window;
 
@@ -28,6 +29,7 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+        restoreActionBar();
         mContext = this;
         setContentView(getContentView(savedInstanceState));
         ButterKnife.bind(this);
@@ -43,6 +45,13 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
         AppCompatDelegate.setDefaultNightMode(SpUtil.isNight() ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
         getWindow().setWindowAnimations(R.style.WindowAnimationFadeInOut);
         recreate();
+    }
+
+    public void restoreActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+        actionBar.hide();
+        actionBar.setDisplayShowTitleEnabled(false);
     }
 
     @Override
