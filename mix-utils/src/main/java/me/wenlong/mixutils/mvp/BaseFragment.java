@@ -27,12 +27,6 @@ public abstract class BaseFragment extends Fragment {
     protected HashMap<String, Object> mFromMap;
 
     @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-        if (!hidden)initView();
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = initContantView(inflater);
         ButterKnife.bind(this, view);
@@ -43,11 +37,6 @@ public abstract class BaseFragment extends Fragment {
             }
         });
         return view;
-    }
-
-    public void setFromMap(HashMap<String, Object> map) {
-        this.mFromMap = map;
-        initView();
     }
 
     @Override
