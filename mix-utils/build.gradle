@@ -57,8 +57,8 @@ ext {
     artifact = 'mix-utils'
 
     libraryDescription = 'A Lib of mine'
-    siteUrl = 'https://github.com/Wenlong-Guo/MixUtils' // 修改为你的项目的主页
-    gitUrl = 'git@github.com:Wenlong-Guo/MixUtils.git' // 修改为你的Git仓库的url
+    siteUrl = 'https://github.com/MixAndroid/MixUtils' // 修改为你的项目的主页
+    gitUrl = 'git@github.com:MixAndroid/MixUtils.git' // 修改为你的Git仓库的url
     libraryVersion = '0.0.9'
 
     developerId = 'wenlong'

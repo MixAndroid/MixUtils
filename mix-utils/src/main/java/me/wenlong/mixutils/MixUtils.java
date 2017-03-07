@@ -1,8 +1,6 @@
 package me.wenlong.mixutils;
 
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 
 import com.elvishew.xlog.LogLevel;
 import com.elvishew.xlog.XLog;
@@ -21,12 +19,10 @@ import wenlong.me.mixutils.BuildConfig;
  */
 public class MixUtils {
     public static Context mContext;
-    public static SharedPreferences mSp;
 
     public static void install(Context context) {
         mContext = context;
         Fresco.initialize(context);
-        mSp = PreferenceManager.getDefaultSharedPreferences(context);
         LogUtils.allowLog = !BuildConfig.DEBUG;
         XLog.init(BuildConfig.DEBUG ? LogLevel.ALL : LogLevel.NONE);
         SpUtil.init(mContext);
