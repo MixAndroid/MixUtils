@@ -6,27 +6,26 @@ import me.wenlong.mixutils.rxjava.RxManager;
 
 
 /**
- * des   : BasePresenter
- * author: Gavin
- * email : guowenlong20000@gmail.com
- * time  : 2016年08月29日 下午 4:44.
+ * des   : BasePresenter author: Gavin email : guowenlong20000@gmail.com time  : 2016年08月29日 下午
+ * 4:44.
  */
 public abstract class BasePresenter<M, T> {
-    public Context context;
-    public M mModel;
-    public T mView;
-    public RxManager mRxManager = new RxManager();
 
-    public void setVM(T v, M m) {
-        this.mView = v;
-        this.mModel = m;
-        this.onStart();
-    }
+  public Context context;
+  public M mModel;
+  public T mView;
+  public RxManager mRxManager = new RxManager();
 
-    public abstract void onStart();
+  public void setVM(T v, M m) {
+    this.mView = v;
+    this.mModel = m;
+    this.onStart();
+  }
 
-    public void onDestroy() {
-        mRxManager.clear();
-    }
+  public abstract void onStart();
+
+  public void onDestroy() {
+    mRxManager.clear();
+  }
 
 }

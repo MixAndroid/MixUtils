@@ -10,38 +10,37 @@ import me.wenlong.mixutils.entity.User;
 import me.wenlong.mixutils.mvp.BaseActivity;
 
 /**
- * des   : Sp工具类
- * author: Gavin
- * email : guowenlong20000@gmail.com
- * time  : 2017年02月04日 下午 5:51.
+ * des   : Sp工具类 author: Gavin email : guowenlong20000@gmail.com time  : 2017年02月04日 下午 5:51.
  */
 
 public class SpUtil {
-    static SharedPreferences prefs;
 
-    public static String getDataByKey(String key) {
-        return prefs.getString(key, "");
-    }
+  static SharedPreferences prefs;
 
-    public static void init(Context context) {
-        prefs = PreferenceManager.getDefaultSharedPreferences(context);
-    }
+  public static String getDataByKey(String key) {
+    return prefs.getString(key, "");
+  }
 
-    public static boolean isNight() {
-        return prefs.getBoolean("isNight", false);
-    }
+  public static void init(Context context) {
+    prefs = PreferenceManager.getDefaultSharedPreferences(context);
+  }
 
-    public static void setNight(Context context, boolean isNight) {
-        prefs.edit().putBoolean("isNight", isNight).commit();
-        if (context instanceof BaseActivity)
-            ((BaseActivity) context).reload();
-    }
+  public static boolean isNight() {
+    return prefs.getBoolean("isNight", false);
+  }
 
-    public static User getUser() {
-        return new Gson().fromJson(prefs.getString("user", ""), User.class);
+  public static void setNight(Context context, boolean isNight) {
+    prefs.edit().putBoolean("isNight", isNight).commit();
+    if (context instanceof BaseActivity) {
+      ((BaseActivity) context).reload();
     }
+  }
 
-    public static void setUser(User user) {
-        prefs.edit().putString("user", new Gson().toJson(user)).commit();
-    }
+  public static User getUser() {
+    return new Gson().fromJson(prefs.getString("user", ""), User.class);
+  }
+
+  public static void setUser(User user) {
+    prefs.edit().putString("user", new Gson().toJson(user)).commit();
+  }
 }

@@ -17,32 +17,32 @@ import guowenlong.me.mixutils.R;
 
 public class MainActivity extends SwipeBackActivity {
 
-    @BindView(R.id.btn_start)
-    Button btnStart;
-    @BindView(R.id.btn_finish)
-    Button btnFinish;
-    @BindView(R.id.activity_main)
-    LinearLayout activityMain;
+  @BindView(R.id.btn_start)
+  Button btnStart;
+  @BindView(R.id.btn_finish)
+  Button btnFinish;
+  @BindView(R.id.activity_main)
+  LinearLayout activityMain;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-        setDragEdge(SwipeBackLayout.DragEdge.LEFT);
-    }
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    ButterKnife.bind(this);
+    setDragEdge(SwipeBackLayout.DragEdge.LEFT);
+  }
 
-    @OnClick({R.id.btn_start, R.id.btn_finish})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btn_start:
-                startActivity(new Intent(this,MainActivity.class));
-                break;
-            case R.id.btn_finish:
-                finish();
-                break;
-        }
+  @OnClick({R.id.btn_start, R.id.btn_finish})
+  public void onClick(View view) {
+    switch (view.getId()) {
+      case R.id.btn_start:
+        startActivity(new Intent(this, MainActivity.class));
+        break;
+      case R.id.btn_finish:
+        finish();
+        break;
     }
+  }
 
 
 }
