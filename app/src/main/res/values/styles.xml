@@ -1,4 +1,10 @@
 <resources>
 
-
+  <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowIsTranslucent">true</item>
+  </style>
+  <!-- Application theme. -->
+  <style name="AppTheme" parent="@style/AppBaseTheme">
+    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+  </style>
 </resources>

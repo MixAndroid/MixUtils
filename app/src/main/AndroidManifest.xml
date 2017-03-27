@@ -8,14 +8,13 @@
     android:label="@string/app_name"
     android:name="me.guowenlong.mixutils.demo.MainApplication"
     android:supportsRtl="true"
-    android:theme="@style/Base.Theme.AppCompat">
-    <activity android:name="me.guowenlong.mixutils.demo.MainActivity">
+    android:theme="@style/AppTheme">
+    <activity
+      android:name="me.guowenlong.mixutils.demo.MainActivity" >
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
-
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
   </application>
-
 </manifest>

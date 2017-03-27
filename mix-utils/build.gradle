@@ -1,11 +1,12 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
-apply plugin: 'com.jakewharton.butterknife'
+
 group = "wenlong.me.mixutils" // Maven Group ID for the artifact，一般填你唯一的包名
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.2"
 
     defaultConfig {
         minSdkVersion 15
@@ -45,7 +46,6 @@ dependencies {
 
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-
     compile 'com.github.liuguangqiang.swipeback:library:1.0.2@aar'
 }
 ext {
@@ -59,7 +59,7 @@ ext {
     libraryDescription = 'A Lib of mine'
     siteUrl = 'https://github.com/MixAndroid/MixUtils' // 修改为你的项目的主页
     gitUrl = 'git@github.com:MixAndroid/MixUtils.git' // 修改为你的Git仓库的url
-    libraryVersion = '0.1.1'
+    libraryVersion = '0.1.2'
 
     developerId = 'wenlong'
     developerName = 'Guo Wenlong'
