@@ -82,12 +82,13 @@ dependencies {
 - [x] 接入Rxjava
 - [x] 接入Fresco
 - [x] 接入SwipeBack
-- [x] 接入Xlog
 - [x] 接入滑动返回功能
+- [ ] 接入Xlog
 - [ ] 增加返回可触摸位置功能
 - [ ] 性能监控库的接入
 - [ ] RxJava2替换RxJava1
 - [ ] 增加samples
+- [ ] 加密解密
 
 ## License
 ```
