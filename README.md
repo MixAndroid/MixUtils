@@ -86,6 +86,7 @@ dependencies {
 - [x] 接入Xlog
 - [x] 性能监控库的接入
 - [ ] RxJava2替换RxJava1
+- [ ] 增加一些其他功能的View
 - [ ] 增加samples
 - [ ] 加密解密
 
